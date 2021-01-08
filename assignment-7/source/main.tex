@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{circuitikz}
+
+\title{DLD Assignment 7}
+\author{Bailapudi Vijay Mani Kumar }
+\date{January 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Boolean Equation}
+\begin{equation}
+    c=\overline{A}\;B\;\overline{C}\;\overline{D}
+\end{equation}
+
+\section{Logic Gate Circuit}
+\begin{figure}[h]
+    \centering
+\begin{circuitikz}
+\begin{scope}
+\ctikzset{tripoles/american nand port/height=1.6};
+\draw 
+(0,0)node[american nand port, number inputs=4] (nand1) {};
+\end{scope}
+\draw
+(2,0)node[american nand port] (nand2) {}
+(-2.5,1.5)node[american nand port] (nandA) {}
+(-2.5,0)node[american nand port] (nandC) {}
+(-2.5,-1.5)node[american nand port] (nandD) {}
+(-5,1.5)node[](A){A}
+(-5,0)node[](C){C}
+(-5,-1.5)node[](D){D}
+
+(nand1.in 2) node[anchor=east] {B}
+(nand2.out) node[anchor=west] {c}
+
+(nand1.out)--(nand2.in 1)
+(nand1.out)--(nand2.in 2)
+(A)--++(0:0.5)node[]{}--(nandA.in 1)
+(A)--++(0:0.5)node[]{}--(nandA.in 2)
+(nandA.out)--(nand1.in 1)
+(C)--++(0:0.5)node[]{}--(nandC.in 1)
+(C)--++(0:0.5)node[]{}--(nandC.in 2)
+(nandC.out)--(nand1.in 3)
+(D)--++(0:0.5)node[]{}--(nandD.in 1)
+(D)--++(0:0.5)node[]{}--(nandD.in 2)
+(nandD.out)--(nand1.in 4)
+;
+\end{circuitikz}
+    \caption{Logic Gate for 2.5.1 (c)}
+    \label{fig:gate}
+\end{figure}
+
+\end{document}
