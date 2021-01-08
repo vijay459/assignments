@@ -1,10 +1,11 @@
 \documentclass{article}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{enumitem}
 
-\title{C code}
-\author{maheshvasimalla }
-\date{December 2020}
+\title{Assignment 4}
+\author{Bailapudi Vijay Mani Kumar}
+
 
 \definecolor{mGreen}{rgb}{0,0.6,0}
 \definecolor{mGray}{rgb}{0.5,0.5,0.5}
@@ -35,12 +36,17 @@
 
 \maketitle
 
+\section{Boolean Expressions}
+\begin{enumerate}[label=(\Alph*)]
+    \item = $\overline{W}$ $\overline{X}$ $\overline{Y}$ $\overline{Z}$ + $\overline{W}$ $\overline{X}$ $\overline{Y}$ $\overline{Z}$ + $\overline{W}$ $\overline{X}$ Y $\overline{Z}$ + $\overline{W}$ X Y $\overline{Z}$ + $\overline{W}$ $\overline{X}$ $\overline{Y}$ Z
+    \item = $\overline{Z}$ $\overline{Y}$ $\overline{X}$ W + $\overline{Z}$ $\overline{Y}$ X $\overline{W}$ + $\overline{Z}$ Y $\overline{X}$ W + $\overline{Z}$ Y X $\overline{W}$
+    \item = $\overline{Z}$ $\overline{Y}$ X W + $\overline{Z}$ Y $\overline{X}$ $\overline{W}$ + $\overline{Z}$ Y $\overline{X}$ W + $\overline{Z}$ Y X $\overline{W}$
+    \item = W X Y $\overline{Z}$ + $\overline{W}$ $\overline{X}$ $\overline{Y}$ Z
+\end{enumerate}
+
+\section{C code}
 \begin{lstlisting}[style=CStyle]
-//Code written on December 30, 2020
-
-//Revised  December 30, 2020
-
-// by maheshvasimalla
+// by bailapudivijay
 
 //This program implements the incremental decoder using boolean logic in C
 
@@ -49,10 +55,6 @@
 //The  main function
 int main(void)
 {
-
-//2 bits = 1 baud
-//4 bits = 1 nibble
-//8 bits = 1 byte
 
 //unsigned char takes input as 1 byte
 
