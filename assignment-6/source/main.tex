@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{circuitikz}
+
+\title{DLD Assignment 6}
+\author{Bailapudi Vijay Mani Kumar }
+\date{January 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Boolean Equation}
+\begin{equation}
+    c=\overline{A}\;B\;\overline{C}\;\overline{D}
+\end{equation}
+
+\section{Logic Gate Circuit}
+\begin{figure}[h]
+    \centering
+\begin{circuitikz}
+\ctikzset{tripoles/american and port/height=1.6};
+\draw 
+(0,0)node[american and port, number inputs=4, anchor=in 1] (and1) {}
+(and1.in 1) node[anchor=east] {A}
+(and1.in 2) node[anchor=east] {B}
+(and1.in 3) node[anchor=east] {C}
+(and1.in 4) node[anchor=east] {D}
+(and1.out) node[anchor=west] {c}
+;
+\node at (and1.bin 1) [ocirc, left]{} ;
+\node at (and1.bin 3) [ocirc, left]{} ;
+\node at (and1.bin 4) [ocirc, left]{} ;
+\end{circuitikz}
+    \caption{Logic Gate for 2.5.1 (c)}
+    \label{fig:gate}
+\end{figure}
+
+\end{document}
