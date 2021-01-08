@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{karnaugh-map}
+
+\title{DLD Assignmnet 5}
+\author{Bailapudi Vijay Manikumar}
+\date{January 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Boolean Equation}
+\begin{equation}
+    c=\overline{A}\;B\;\overline{C}\;\overline{D}
+\end{equation}
+
+\section{K - Map}
+\begin{figure}[h]
+    \centering
+    \begin{karnaugh-map}[4][4][1][][]
+    \maxterms{0,2,3,4,5,6,7,8,9}
+    \minterms{1}
+    \autoterms[X]
+    \implicant{1}{1}
+    \draw[color=black, ultra thin] (0, 4) --
+    node [pos=0.7, above right, anchor=south west] {$AB$}
+    node [pos=0.7, below left, anchor=north east] {$CD$}
+    ++(135:1);
+    \end{karnaugh-map}
+    \caption{K-Map for 2.5.1 (c)}
+    \label{fig:kmap}
+\end{figure}
+Since we can't group any 1's and X's, we cannot simplify the expression any further.
+
+\end{document}
