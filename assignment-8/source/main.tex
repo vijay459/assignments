@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{karnaugh-map}
+
+\title{DLD Assignment 8}
+\author{Bailapudi Vijay Mani Kumar}
+\date{January 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Boolean Equation}
+\begin{equation}
+    c=\overline{A}\;B\;\overline{C}\;\overline{D}
+\end{equation}
+
+\section{K - Map}
+\begin{figure}[h]
+    \centering
+    \begin{karnaugh-map}[4][4][1][][]
+    \minterms{1}
+    \autoterms[0]
+    \implicant{4}{14}
+    \implicant{12}{10}
+    \implicant{3}{10}
+    \implicantedge{0}{8}{2}{10}
+    \draw[color=black, ultra thin] (0, 4) --
+    node [pos=0.7, above right, anchor=south west] {$AB$}
+    node [pos=0.7, below left, anchor=north east] {$CD$}
+    ++(135:1);
+    \end{karnaugh-map}
+    \caption{K-Map for 2.5.1 (c)}
+    \label{fig:kmap}
+\end{figure}
+From the K-Map above, we can infer that the POS expression is:
+\begin{equation}
+    c=\overline{D}\;\overline{C}\;\overline{A}\;B
+\end{equation}
+
+\end{document}
